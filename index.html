@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Game</title>
+  <link rel="shortcut icon" type="image/ico" href="./img/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__content">
+      <a class="logo" href="./">
+        <img class="header__logo" src="./img/foot.svg" alt="Logo">
+        <h1>Memory Game</h1>
+      </a>
+      <div class="header__details">
+        <p class="time">Time: <span><b class="min">00</b>:<b class="sec">00</b></span></p>
+        <p class="flips">Flips: <span><b>0</b></span></p>
+        <button class="btn btn-reset">Refresh</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <ul class="cards list-reset" style="background-color: #fff;">
+        <li class="card">
+          <div class="view front-view"> 
+            <svg class="icon">
+              <use xlink:href="./img/foot.svg#foot"></use>
+            </svg>
+          </div>
+          <div class="view back-view">
+            <img class="icon" src="./img/animal/img1.svg" alt="Card Image">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view"> 
+            <svg class="icon">
+              <use xlink:href="./img/foot.svg#foot"></use>
+            </svg>
+          </div>
+          <div class="view back-view">
+            <img class="icon" src="./img/animal/img2.svg" alt="Card Image">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view"> 
+            <svg class="icon">
+              <use xlink:href="./img/foot.svg#foot"></use>
+            </svg>
+          </div>
+          <div class="view back-view">
+            <img class="icon" src="./img/animal/img3.svg" alt="Card Image">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view"> 
+            <svg class="icon">
+              <use xlink:href="./img/foot.svg#foot"></use>
+            </svg>
+          </div>
+          <div class="view back-view">
+            <img class="icon" src="./img/animal/img4.svg" alt="Card Image">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view"> 
+            <svg class="icon">
+              <use xlink:href="./img/foot.svg#foot"></use>
+            </svg>
+          </div>
+          <div class="view back-view">
+            <img class="icon" src="./img/animal/img5.svg" alt="Card Image">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view"> 
+            <svg class="icon">
+              <use xlink:href="./img/foot.svg#foot"></use>
+            </svg>
+          </div>
+          <div class="view back-view">
+            <img class="icon" src="./img/animal/img6.svg" alt="Card Image">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view"> 
+            <svg class="icon">
+              <use xlink:href="./img/foot.svg#foot"></use>
+            </svg>
+          </div>
+          <div class="view back-view">
+            <img class="icon" src="./img/animal/img7.svg" alt="Card Image">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view"> 
+            <svg class="icon">
+              <use xlink:href="./img/foot.svg#foot"></use>
+            </svg>
+          </div>
+          <div class="view back-view">
+            <img class="icon" src="./img/animal/img8.svg" alt="Card Image">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view"> 
+            <svg class="icon">
+              <use xlink:href="./img/foot.svg#foot"></use>
+            </svg>
+          </div>
+          <div class="view back-view">
+            <img class="icon" src="./img/animal/img9.svg" alt="Card Image">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view"> 
+            <svg class="icon">
+              <use xlink:href="./img/foot.svg#foot"></use>
+            </svg>
+          </div>
+          <div class="view back-view">
+            <img class="icon" src="./img/animal/img10.svg" alt="Card Image">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view"> 
+            <svg class="icon">
+              <use xlink:href="./img/foot.svg#foot"></use>
+            </svg>
+          </div>
+          <div class="view back-view">
+            <img class="icon" src="./img/animal/img1.svg" alt="Card Image">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view"> 
+            <svg class="icon">
+              <use xlink:href="./img/foot.svg#foot"></use>
+            </svg>
+          </div>
+          <div class="view back-view">
+            <img class="icon" src="./img/animal/img2.svg" alt="Card Image">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view"> 
+            <svg class="icon">
+              <use xlink:href="./img/foot.svg#foot"></use>
+            </svg>
+          </div>
+          <div class="view back-view">
+            <img class="icon" src="./img/animal/img3.svg" alt="Card Image">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view"> 
+            <svg class="icon">
+              <use xlink:href="./img/foot.svg#foot"></use>
+            </svg>
+          </div>
+          <div class="view back-view">
+            <img class="icon" src="./img/animal/img4.svg" alt="Card Image">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view"> 
+            <svg class="icon">
+              <use xlink:href="./img/foot.svg#foot"></use>
+            </svg>
+          </div>
+          <div class="view back-view">
+            <img class="icon" src="./img/animal/img5.svg" alt="Card Image">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view"> 
+            <svg class="icon">
+              <use xlink:href="./img/foot.svg#foot"></use>
+            </svg>
+          </div>
+          <div class="view back-view">
+            <img class="icon" src="./img/animal/img6.svg" alt="Card Image">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view"> 
+            <svg class="icon">
+              <use xlink:href="./img/foot.svg#foot"></use>
+            </svg>
+          </div>
+          <div class="view back-view">
+            <img class="icon" src="./img/animal/img7.svg" alt="Card Image">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view"> 
+            <svg class="icon">
+              <use xlink:href="./img/foot.svg#foot"></use>
+            </svg>
+          </div>
+          <div class="view back-view">
+            <img class="icon" src="./img/animal/img8.svg" alt="Card Image">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view"> 
+            <svg class="icon">
+              <use xlink:href="./img/foot.svg#foot"></use>
+            </svg>
+          </div>
+          <div class="view back-view">
+            <img class="icon" src="./img/animal/img9.svg" alt="Card Image">
+          </div>
+        </li>
+        <li class="card">
+          <div class="view front-view"> 
+            <svg class="icon">
+              <use xlink:href="./img/foot.svg#foot"></use>
+            </svg>
+          </div>
+          <div class="view back-view">
+            <img class="icon" src="./img/animal/img10.svg" alt="Card Image">
+          </div>
+        </li>
+      </ul>
+
+      <h2>Results Table</h2>
+      <table id="table">
+        <tr>
+
+        </tr>
+      </table>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer-left">
+          <p>&copy;&nbsp;2022</p>
+        </div>
+        <div class="footer-center">
+          <a href="https://github.com/kravchuk-st" target="_blank">
+            <img src="./img/github-logo.svg" alt="github_icon">
+          </a>
+        </div>
+        <div class="footer-rigft">
+          <a href="https://rs.school/js/" target="_blank">
+            <img src="./img/rs_school.svg" alt="rs-school-logo">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
