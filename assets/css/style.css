@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: #333;
+  cursor: pointer;
+}
+
+a:hover,
+.btn:hover {
+  color: #333;
+  text-decoration: none !important;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:focus,
+.btn:active {
+  box-shadow: none !important;
+}
+
+h1, h2, p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Verdana", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.25;
+  text-align: center;
+  color: #333;
+}
+
+main {
+  min-height: calc(100vh - 150px);
+  display: flex;
+  align-items: center;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1180px;
+  padding: 0 15px;
+  margin: 0 auto;
+}/*# sourceMappingURL=style.css.map */
