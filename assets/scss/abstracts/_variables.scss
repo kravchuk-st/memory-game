@@ -1,11 +1,10 @@
-// Розміри
-$container-width: 1360px;
-$border-radius: 12px;
-$gap-sm: 8px;
-$gap-md: 16px;
-$gap-lg: 32px;
+:root {
+	--container-width: 1180px;
+	--border-radius: 12px;
+	--gap-sm: 8px;
+	--gap-md: 16px;
+	--gap-lg: 32px;
 
-// Точки перелому
-$breakpoint-mobile: 480px;
-$breakpoint-tablet: 768px;
-$breakpoint-desktop: 1024px;
+	--color-text: #333;
+	--color-accent: #ffb340;
+}

@@ -1,0 +1,18 @@
+.btn {
+	padding: 7px 25px;
+	border: 2px solid var(--color-text);
+	border-radius: 12px;
+	background-color: transparent;
+	color: var(--text);
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+
+	&:hover {
+		background-color: #fff;
+		border-color: var(--color-accent);
+		color: var(--color-accent);
+		box-shadow: 0 3px 10px rgba(var(--color-accent), 0.1);
+	}
+}

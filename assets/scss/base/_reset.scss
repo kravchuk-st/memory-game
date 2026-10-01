@@ -6,13 +6,13 @@
 }
 
 a{
-  color: #333;
+  color: var(--color-text);
   cursor: pointer;
 }
 
 a:hover,
 .btn:hover {
-  color: #333;
+  color: var(--color-text);
   text-decoration: none !important;
   transition: all 0.3s ease-in-out;
 }
@@ -34,18 +34,17 @@ body {
   font-size: 18px;
   line-height: 1.25;
   text-align: center;
-  color: #333;
+  color: var(--color-text);
 }
 
 main{
+  padding: 20px 0;
   min-height: calc(100vh - 150px);
-  display: flex;
-  align-items: center;
 }
 
 .wrapper {
   width: 100%;
-  max-width: 1180px;
+  max-width: var(--container-width);
   padding: 0 15px;
   margin: 0 auto;
 }
