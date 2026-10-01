@@ -1,16 +1,20 @@
 import { createEl } from './dom.js';
-import { Card } from './card.js'
+import { Card } from './card.js';
+import { Modal } from './modal.js';
 
 const IMAGES = Array.from({ length: 8 }, (_, i) => ({
   id: i + 1,
   src: `./assets/img/animal/${i}.svg`,
-  alt: `Тварина ${i + 1}`,
+  alt: `animal`,
 }));
 const TOTAL_PAIRS = IMAGES.length;
 const MISMATCH_DELAY = 1000;
 
 const createButton = (text, onClick) => {
-  const btn = createEl('button', { className: 'btn btn-reset', text });
+  const btn = createEl('button', {
+    className: 'btn btn-reset',
+    text,
+  });
   btn.addEventListener('click', onClick);
   return btn;
 };
@@ -36,10 +40,10 @@ class Game {
   constructor() {
     this.root = document.body;
     this.render();
-		this.newGame();
+    this.newGame();
   }
 
-  render () {
+  render() {
     this.movesEl = createEl('b', { text: '0' });
     this.pairsEl = createEl('b', { text: '0' });
     this.board = createEl('div', { className: 'cards' });
@@ -50,8 +54,8 @@ class Game {
         createEl('div', {
           className: 'wrapper',
           children: [
-            createButton('Новая игра'),
-            createButton('Таблица лидеров'),
+            createButton('Новая игра', () => this.newGame()),
+            createButton('Таблица лидеров', () => this.showWin()),
           ],
         }),
       ],
@@ -60,28 +64,32 @@ class Game {
     const stats = createEl('div', {
       className: 'stats',
       children: [
-        createEl('p', { children: ['Ходи: ', this.movesEl] }),
-        createEl('p', { children: ['Пари: ', this.pairsEl, ` з ${TOTAL_PAIRS}`] }),
+        createEl('p', { children: ['Ходы: ', this.movesEl] }),
+        createEl('p', { children: ['Пары: ', this.pairsEl, ` из ${TOTAL_PAIRS}`] }),
       ],
     });
 
     const section = createEl('section', {
-			className: 'wrapper',
-			children: [stats, this.board],
-		});
+      className: 'wrapper',
+      children: [stats, this.board],
+    });
 
-		this.root.append(header, createEl('main', { children: [section] }));
-  };
+    this.root.append(header, createEl('main', { children: [section] }));
 
-	newGame() {
+    this.modal = new Modal();
+  }
+
+  newGame() {
     clearTimeout(this.timerId);
     this.timerId = null;
+    this.modal.close();
 
     this.firstCard = null;
     this.locked = false;
     this.finished = false;
     this.moves = 0;
     this.pairs = 0;
+    this.updateStats();
 
     const deck = shuffle([...IMAGES, ...IMAGES]);
     this.cards = deck.map((image) => new Card(image, (card) => this.handleCardClick(card)));
@@ -119,6 +127,30 @@ class Game {
       this.timerId = null;
     }, MISMATCH_DELAY);
   }
-};
+
+  updateStats() {
+    this.movesEl.textContent = String(this.moves);
+    this.pairsEl.textContent = String(this.pairs);
+  }
+
+  finish() {
+    this.finished = true;
+    this.showWin();
+  };
+
+  showWin() {
+    this.modal.open([
+      createEl('h2', {className: 'modal__title', text: 'Победа!' }),
+      createEl('p', {className: 'modal__subtitle', text: `Количество ходов: ${this.moves}` }),
+      createEl('div', {
+        className: 'modal__actions',
+        children: [
+          createButton('Новая игра', () => this.newGame()),
+          createButton('Закрыть', () => this.modal.close()),
+        ],
+      }),
+    ]);
+  };
+}
 
 new Game();

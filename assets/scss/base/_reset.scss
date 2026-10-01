@@ -48,3 +48,8 @@ main{
   padding: 0 15px;
   margin: 0 auto;
 }
+
+.no-scroll {
+  overflow: hidden ;
+  user-select: none;
+}
