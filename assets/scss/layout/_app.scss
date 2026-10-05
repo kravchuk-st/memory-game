@@ -1,0 +1,36 @@
+.stats {
+	display: flex;
+	justify-content: flex-end;
+	column-gap: var(--gap-md);
+}
+
+.cards{
+  margin: 20px auto 40px;
+  width: fit-content;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 35px;
+  align-items: center;
+  justify-items: center;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 600px) {
+  .cards {
+    grid-gap: 20px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .cards {
+    grid-gap: 15px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .cards {
+    grid-gap: 10px;
+  }
+}
