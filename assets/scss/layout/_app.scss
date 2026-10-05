@@ -16,3 +16,21 @@
   justify-items: center;
   background-color: transparent;
 }
+
+@media screen and (max-width: 600px) {
+  .cards {
+    grid-gap: 20px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .cards {
+    grid-gap: 15px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .cards {
+    grid-gap: 10px;
+  }
+}

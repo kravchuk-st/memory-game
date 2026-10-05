@@ -82,6 +82,11 @@ main {
   box-shadow: 0 3px 10px rgba(var(--color-accent), 0.1);
 }
 
+@media screen and (max-width: 450px) {
+  .btn {
+    font-size: 14px;
+  }
+}
 .card, .view {
   display: flex;
   align-items: center;
@@ -155,6 +160,32 @@ main {
   }
   80% {
     transform: translateX(8px);
+  }
+}
+@media screen and (max-width: 600px) {
+  .card {
+    width: 80px;
+    height: 80px;
+  }
+  .card .front-view {
+    background-size: 60px;
+  }
+  .card .icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .card {
+    width: 75px;
+    height: 75px;
+  }
+  .card .front-view {
+    background-size: 55px;
+  }
+  .card .icon {
+    width: 55px;
+    height: 55px;
   }
 }
 .overlay {
@@ -257,4 +288,20 @@ main {
   align-items: center;
   justify-items: center;
   background-color: transparent;
+}
+
+@media screen and (max-width: 600px) {
+  .cards {
+    grid-gap: 20px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .cards {
+    grid-gap: 15px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .cards {
+    grid-gap: 10px;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -16,3 +16,9 @@
 		box-shadow: 0 3px 10px rgba(var(--color-accent), 0.1);
 	}
 }
+
+@media screen and (max-width: 450px) {
+	.btn {
+		font-size: 14px;
+	}
+}
