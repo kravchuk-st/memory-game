@@ -39,10 +39,39 @@
 
 	&__subtitle {
 		margin-top: 10px;
+    margin-bottom: 20px;
 	}
 
+  &__table {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+    border-collapse: collapse;
+
+    thead {
+      border: none;
+      border-bottom: 1px solid #333;
+
+      th:not(:last-child) {
+        border-right: 1px solid #333;
+      }
+    }
+
+    th, tr {
+      padding: 4px 8px;
+    }
+
+    tr:not(:last-child) {
+      border-bottom: 1px solid #333;
+    }
+
+    tr td:not(:last-child) {
+      border-right: 1px solid #333;
+    }
+  }
+
 	&__actions {
-		margin-top: 20px;
 		display: flex;
 		justify-content: center;
 		gap: var(--gap-lg);

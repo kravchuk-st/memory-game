@@ -1,7 +1,6 @@
 :root {
-  --container-width: 1180px;
+  --container-width: 970px;
   --border-radius: 12px;
-  --gap-sm: 8px;
   --gap-md: 16px;
   --gap-lg: 32px;
   --color-text: #333;
@@ -197,9 +196,32 @@ main {
 }
 .modal__subtitle {
   margin-top: 10px;
+  margin-bottom: 20px;
+}
+.modal__table {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #333;
+  border-collapse: collapse;
+}
+.modal__table thead {
+  border: none;
+  border-bottom: 1px solid #333;
+}
+.modal__table thead th:not(:last-child) {
+  border-right: 1px solid #333;
+}
+.modal__table th, .modal__table tr {
+  padding: 4px 8px;
+}
+.modal__table tr:not(:last-child) {
+  border-bottom: 1px solid #333;
+}
+.modal__table tr td:not(:last-child) {
+  border-right: 1px solid #333;
 }
 .modal__actions {
-  margin-top: 20px;
   display: flex;
   justify-content: center;
   gap: var(--gap-lg);

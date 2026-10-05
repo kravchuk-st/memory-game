@@ -1,6 +1,7 @@
 import { createEl } from './dom.js';
 import { Card } from './card.js';
 import { Modal } from './modal.js';
+import { ScoreStorage } from './scoreStorage.js';
 
 const IMAGES = Array.from({ length: 8 }, (_, i) => ({
   id: i + 1,
@@ -29,6 +30,7 @@ const shuffle = (arr) => {
 };
 
 class Game {
+  storage = new ScoreStorage();
   cards = [];
   firstCard = null;
   locked = false;
@@ -55,7 +57,7 @@ class Game {
           className: 'wrapper',
           children: [
             createButton('Новая игра', () => this.newGame()),
-            createButton('Таблица лидеров', () => this.showWin()),
+            createButton('Таблица лидеров', () => this.showLeaderboard()),
           ],
         }),
       ],
@@ -135,7 +137,43 @@ class Game {
 
   finish() {
     this.finished = true;
+    this.storage.add(this.moves);
     this.showWin();
+  };
+
+  showLeaderboard() {
+    const scores = this.storage.getAll().slice(0, 10);
+
+    const content = scores.length === 0
+      ? createEl('p', {className: 'modal__subtitle', text: 'Пока нет результатов' })
+      : createEl('table', {
+        className: 'modal__table',
+        children: [
+          createEl('thead', {
+            children: [
+              createEl('tr', {
+                children: ['Место', 'Ходы', 'Дата'].map((t) => createEl('th', { text: t })),
+              }),
+            ],
+          }),
+          createEl('tbody', {
+            children: scores.map((s, i) =>
+              createEl('tr', {
+                children: [
+                  createEl('td', { text: String(i + 1) }),
+                  createEl('td', { text: String(s.moves) }),
+                  createEl('td', { text: ScoreStorage.formatDate(s.timestamp) }),
+                ],
+              })),
+          }),
+        ],
+      });
+
+    this.modal.open([
+      createEl('h2', {className: 'modal__title', text: 'Таблица лидеров' }),
+      content,
+      createButton('Закрыть', () => this.modal.close()),
+    ]);
   };
 
   showWin() {
